@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <script defer src = "scripts.js"></script>
+    <title>Quiz</title>
+</head>
+<body>
+
+<div class = "container">
+    <div id = "question-container" class = "hide">
+        <div id = "question">Question</div>
+        <div id = "answer-buttons" class="btn-grid">
+            <button class = "btn correct">Answer 1</button>
+            <button class = "btn wrong">Answer 2</button>
+            <button class = "btn">Answer 3</button>
+            <button class = "btn">Answer 4</button>
+        </div>
+    </div>
+
+    <div class="container1">
+        <div id="results-container" class = "hide">
+            <h1 id = "score"></h1><h1>Is Your Final Score</h1>
+            <button id ="submit-btn" class ="submit-btn btn" onclick="scoreForm()">Submit</button>
+            <button id ="back-btn" class ="back-btn btn " onclick="startQuiz()">Start Over</button>
+        </div>
+    </div>
+
+    <div class = "controls">
+        <button id ="start-btn" class ="start-btn btn">Start</button>
+        <button id ="next-btn" class ="next-btn btn hide">Next</button>
+    </div>
+
+    <div class = "timer">
+        <div id = "timer-container" class = "hide">
+            <h3>TIMER: </h3>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
