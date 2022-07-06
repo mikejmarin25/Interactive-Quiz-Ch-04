@@ -6,8 +6,10 @@ const resultsContainerElement = document.getElementById('results-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
+let timer = document.getElementById('countdown');
+
 let score = 0;
-let time = 50
+let timeLeft = 30
 
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
@@ -24,6 +26,8 @@ function startQuiz(){
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0;
     score = 0;
+    timeLeft = 30
+    countdown()
     questionContainerElement.classList.remove('hide')
 
     setNextQuestion()
@@ -61,6 +65,9 @@ function selectAnswer(e){
         score = score + 20
         console.log(score)
     }
+    else{
+        timeLeft = timeLeft - 3;
+    }
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
@@ -96,6 +103,20 @@ function setStatusClass(element, correct){
         element.classList.add('wrong')
     }
 }
+
+function countdown() {
+    var timerId = setInterval(function () {
+      if (timeLeft > 0) {
+        timer.textContent = 'Time left is ' + timeLeft;
+      } else {
+        timer.textContent = ''
+        clearInterval(timerId)
+        endQuiz();
+      }
+      timeLeft = timeLeft - 1;
+    }, 1000);
+  }
+  
 
 function clearStatusClass(element){
     element.classList.remove('correct')
