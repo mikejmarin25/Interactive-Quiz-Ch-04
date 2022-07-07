@@ -3,7 +3,6 @@ const nextButton = document.getElementById('next-btn')
 const timerContainerElement = document.getElementById('timer-container')
 const questionContainerElement = document.getElementById('question-container')
 const resultsContainerElement = document.getElementById('results-container')
-const scoreContainerElement = document.getElementById('score-container')	
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
