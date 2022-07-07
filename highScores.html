@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>High Scores</title>
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid bg-info text-light">
+    <div class="container text-center">
+        <h1>
+            High Scores!
+        </h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h3>Player Information</h3>
+            <br />
+            <form id="score-form" action = "/action_page.php" method="post" target="_blank">
+                <div class="form-group row">
+                    <label for="player-name" class="col-sm-4 col-form-label">Enter Name:
+                    </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="player-name" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="scores" class="col-sm-4 col-form-label">Score: </label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="scores" autocomplete="off" />
+                    </div>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-info">
+                    Submit
+                </button>
+                <button id="back" class="btn btn-info" onclick="goBack()">
+                    Back To Quiz
+                </button>
+            </form>
+        </div>
+        <div class="col-6">
+            <h3>Scores:</h3>
+            <br />
+            <ul class="list-group" id="score-list"></ul>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="script.js"></script>
+
+</html>

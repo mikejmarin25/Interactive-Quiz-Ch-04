@@ -3,6 +3,7 @@ const nextButton = document.getElementById('next-btn')
 const timerContainerElement = document.getElementById('timer-container')
 const questionContainerElement = document.getElementById('question-container')
 const resultsContainerElement = document.getElementById('results-container')
+const scoreContainerElement = document.getElementById('score-container')	
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
@@ -26,10 +27,9 @@ function startQuiz(){
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0;
     score = 0;
+    questionContainerElement.classList.remove('hide')	
     timeLeft = 30
     countdown()
-    questionContainerElement.classList.remove('hide')
-
     setNextQuestion()
 }
 
@@ -81,7 +81,6 @@ function selectAnswer(e){
 }
 
 function endQuiz() {
-    alert('your score is ' + score)
     questionContainerElement.classList.add('hide')
     resultsContainerElement.classList.remove('hide')
     timerContainerElement.classList.add('hide')
@@ -90,8 +89,7 @@ function endQuiz() {
 }
 
 function scoreForm(){
-    let initials = window.prompt("Enter your initials")
-    alert (initials + ' scored ' + score)
+    window.location.href = "highScores.html";	
 }
 
 function setStatusClass(element, correct){
